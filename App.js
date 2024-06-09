@@ -14,7 +14,6 @@ const developerRoutes = require('./routes/developerRoutes');
 const projectRoutes = require('./routes/projectRoutes');
 const expenseformRoutes = require('./routes/expenseformRoutes');
 const expensesheetformRoutes = require('./routes/expensesheetformRoutes');
-
 const expenseRoutes = require('./routes/expenseRoutes');
 const expenseSheet2 = require('./routes/expenseSheet2');
 const pettyCashRoutes = require('./routes/pettyCashRoutes');
@@ -24,12 +23,12 @@ const inventoryRoutes = require('./routes/inventoryRoutes');
 const app = express();
 
 
-const port = process.env.PORT || 8000;
+const port = 8080;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb+srv://haroonafridi:bkDEkuVyVeH0Fz2J@cluster1.vbg43ub.mongodb.net/averroes', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://127.0.0.1:27017/Quixportal', { useNewUrlParser: true, useUnifiedTopology: true });
 app.use('/bank', bankRoutes);
 app.use('/employee', employeeRoutes);
 app.use('/attendance', attendanceRoutes);
