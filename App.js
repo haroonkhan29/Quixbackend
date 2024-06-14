@@ -23,7 +23,7 @@ const inventoryRoutes = require('./routes/inventoryRoutes');
 const app = express();
 
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -31,10 +31,6 @@ app.use(express.static('public'));
 mongoose.connect('mongodb://admin2:admin2@localhost:27017/quix_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then(() => {
-  console.log('MongoDB connected');
-}).catch((err) => {
-  console.error('MongoDB connection error:', err);
 });
 
 app.use('/bank', bankRoutes);
