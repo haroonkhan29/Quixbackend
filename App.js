@@ -28,7 +28,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://127.0.0.1:27017/quix-db', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://admin2:admin2@localhost:27017/quix-db', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 app.use('/bank', bankRoutes);
 app.use('/employee', employeeRoutes);
 app.use('/attendance', attendanceRoutes);
