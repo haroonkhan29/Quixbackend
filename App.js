@@ -28,7 +28,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://admin2:admin2@localhost:27017/quix-db');
+mongoose.connect('mongodb://admin2:admin2@localhost:27017/quix-db?authSource=admin');
 
 app.use('/bank', bankRoutes);
 app.use('/employee', employeeRoutes);
